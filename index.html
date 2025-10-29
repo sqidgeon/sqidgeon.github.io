@@ -3,150 +3,116 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Bio</title>
-
-  <style>
-    /* ====== BUILT-IN CSS ====== */
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background-color: #f0f0f0;
-      color: #333;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    header {
-      background: linear-gradient(135deg, #0077cc, #00bcd4);
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    header img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      border: 3px solid white;
-      margin-bottom: 15px;
-    }
-
-    h1 {
-      margin: 10px 0 5px;
-      font-size: 2em;
-    }
-
-    p.tagline {
-      font-style: italic;
-      opacity: 0.9;
-    }
-
-    main {
-      max-width: 700px;
-      margin: 40px auto;
-      padding: 20px;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    }
-
-    section {
-      margin-bottom: 25px;
-    }
-
-    h2 {
-      color: #0077cc;
-      border-left: 4px solid #00bcd4;
-      padding-left: 10px;
-    }
-
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    ul li {
-      padding: 5px 0;
-    }
-
-    footer {
-      text-align: center;
-      padding: 15px;
-      background-color: #0077cc;
-      color: white;
-      margin-top: 40px;
-    }
-
-    button {
-      background-color: #0077cc;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    button:hover {
-      background-color: #005fa3;
-    }
-
-    /* Dark Mode */
-    body.dark {
-      background-color: #121212;
-      color: #eee;
-    }
-
-    body.dark main {
-      background-color: #1e1e1e;
-      box-shadow: 0 0 10px rgba(255,255,255,0.1);
-    }
-
-    body.dark footer {
-      background-color: #222;
-    }
-  </style>
+  <title>Sqidgeon | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <header>
-    <img src="https://i.pravatar.cc/120" alt="Profile Picture">
-    <h1>Alex Carter</h1>
-    <p class="tagline">Web Developer | Designer | Dreamer</p>
-    <button onclick="toggleTheme()">🌙 Toggle Theme</button>
+  <header class="navbar">
+    <a class="logo">
+      <span>Sqidgeon</span><span class="accent">.Dev</span>
+    </a>
+
+    <button id="menu-btn" aria-label="Open menu">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+           stroke="currentColor" stroke-width="2">
+        <line x1="4" y1="6" x2="20" y2="6" />
+        <line x1="4" y1="12" x2="20" y2="12" />
+        <line x1="4" y1="18" x2="20" y2="18" />
+      </svg>
+    </button>
+
+    <nav id="menu" class="menu">
+      <button id="close-btn" aria-label="Close menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+             stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#socials">Socials</a>
+      <a href="#contact">Contact</a>
+
+      <div class="theme-toggle-container">
+        <span>Theme:</span>
+        <button id="theme-toggle" aria-label="Toggle theme">
+          <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+          </svg>
+          <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2m0 16v2m10-10h-2M4 12H2m15.364 6.364-1.414-1.414M6.05 6.05 4.636 4.636m12.728 0-1.414 1.414M6.05 17.95l-1.414 1.414" />
+          </svg>
+        </button>
+      </div>
+    </nav>
   </header>
 
+  <div id="overlay"></div>
+
   <main>
-    <section>
-      <h2>About Me</h2>
-      <p>Hi there! I'm Alex, a creative web developer who loves crafting elegant and intuitive websites. I’m passionate about front-end design, user experience, and bringing ideas to life through code.</p>
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Hi, I'm <span class="accent">Sqidgeon</span></h1>
+          <h2>I am a <span class="typing"></span></h2>
+        </div>
+        <div class="hero-image-container">
+          <img src="profile.png" alt="Sqidgeon" class="hero-image" />
+        </div>
+      </div>
     </section>
 
-    <section>
-      <h2>Skills</h2>
-      <ul>
-        <li>💻 HTML, CSS, JavaScript</li>
-        <li>🎨 UI/UX Design</li>
-        <li>⚙️ React, Node.js</li>
-        <li>📱 Responsive Design</li>
-      </ul>
+    <!-- About -->
+    <section id="about" class="section">
+      <h2>About</h2>
+      <p>
+        Hey! I'm Sqidgeon, a curious and passionate beginner developer focused on improving my skills by coding. I am self taught and mostly used YouTube to learn.
+      </p>
     </section>
 
-    <section>
+    <!-- Socials -->
+    <section id="socials" class="section">
+      <h2>Socials</h2>
+      <div class="social-grid">
+        <div class="social-card"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg"><h3>GitHub</h3><p>@sqidgeon</p><a href="https://github.com/sqidgeon" target="_blank" class="btn">Visit</a></div>
+        <div class="social-card"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/modrinth.svg"><h3>Modrinth</h3><p>@sqidgeon</p><a href="https://modrinth.com/sqidgeon" target="_blank" class="btn">Visit</a></div>
+        <div class="social-card"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/curseforge.svg"><h3>CurseForge</h3><p>@sqidgeon</p><a href="https://curseforge.com/sqidgeon" target="_blank" class="btn">Visit</a></div>
+        <div class="social-card"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/steam.svg"><h3>Steam</h3><p>@sqidgeon</p><a href="https://steamcommunity.com/sqidgeon" target="_blank" class="btn">Visit</a></div>
+        <div class="social-card"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"><h3>Instagram</h3><p>@sqidgeon</p><a href="https://www.instagram.com/sqidgeon/" target="_blank" class="btn">Visit</a></div>
+        <div class="social-card"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg"><h3>YouTube</h3><p>@Sqidgeon</p><a href="https://youtube.com/Sqidgeon" target="_blank" class="btn">Visit</a></div>
+
+        <div class="social-card hidden"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/threads.svg"><h3>Threads</h3><p>@Sqidgeon</p><a href="https://www.threads.com/@sqidgeon" target="_blank" class="btn">Visit</a></div>
+        <div class="social-card hidden"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/twitter.svg"><h3>Twitter</h3><p>@Sqidgeon</p><a href="https://x.com/sqidgeon" target="_blank" class="btn">Visit</a></div>
+        <div class="social-card hidden"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg"><h3>Tiktok</h3><p>@Sqidgeon</p><a href="https://www.tiktok.com/@sqidgeon" target="_blank" class="btn">Visit</a></div>
+        <div class="social-card hidden"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/reddit.svg"><h3>Reddit</h3><p>u/Sqidgeon</p><a href="https://www.reddit.com/u/Sqidgeon/" target="_blank" class="btn">Visit</a></div>
+        <div class="social-card hidden"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/twitch.svg"><h3>Twitter</h3><p>@Sqidgeon</p><a href="https://www.twitch.tv/sqidgeon" target="_blank" class="btn">Visit</a></div>
+        <div class="social-card hidden"><img src="database/logo/recroomlogo.png"><h3>Rec.net</h3><p>@Sqidgeon</p><a href="https://rec.net/user/sqidgeon" target="_blank" class="btn">Visit</a></div>
+      </div>
+
+      <div class="show-more-container">
+        <button id="show-more-btn">Show More</button>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
       <h2>Contact</h2>
-      <p>📧 Email: <a href="mailto:alex@example.com">alex@example.com</a></p>
-      <p>🌐 Website: <a href="#">alexcarter.dev</a></p>
+      <p>
+        Want to tell me something? Email me:
+        <a href="mailto:sqidgeon@outlook.com">sqidgeon@outlook.com</a>.
+      </p>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Alex Carter. Made with ❤️ and JavaScript.</p>
+    <p>© 2025 Sqidgeon</p>
   </footer>
 
-  <script>
-    // ====== SIMPLE JAVASCRIPT ======
-    function toggleTheme() {
-      document.body.classList.toggle('dark');
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
