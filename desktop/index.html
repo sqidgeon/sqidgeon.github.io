@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Floating Taskbar with Start Button</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: url("wallpaper.jpg") center center / cover no-repeat fixed;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-family: "Segoe UI", sans-serif;
+  }
+
+  /* Simple floating taskbar */
+  .taskbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;              /* controls distance from sides */
+    height: 56px;
+    margin-bottom: 20px;     /* hover gap */
+    padding: 0 16px;
+    border-radius: 12px;
+    background: rgba(20, 20, 20, 0.6);
+    backdrop-filter: blur(6px);
+    color: white;
+  }
+
+  /* Start button using an image */
+  .start-button {
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .start-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .brave {
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+  }
+  
+  /* Tray area on the right */
+  .tray {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    opacity: 0.85;
+  }
+
+  .clock {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    line-height: 1.2;
+  }
+</style>
+</head>
+<body>
+
+  <div class="taskbar">
+    <button class="start-button">
+      <img src="start.png" alt="Start Button">
+      <img src="start.png" alt="brave">
+    </button>
+
+    <div class="tray">
+      <div>EN</div>
+      <div class="clock" id="clock"></div>
+    </div>
+  </div>
+
+<script>
+  // Simple live clock
+  function updateClock() {
+    const now = new Date();
+    const time = now.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
+    const date = now.toLocaleDateString([], {month: 'numeric', day: 'numeric', year: '2-digit'});
+    document.getElementById('clock').innerHTML = `${time}<br>${date}`;
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
+</script>
+
+</body>
+</html>
