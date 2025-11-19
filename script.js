@@ -40,7 +40,7 @@ themeToggle.addEventListener("click", () => {
 // Typing Effect
 // ===============================
 const typingElement = document.querySelector(".typing");
-const roles = ["developer", "linux user", "tech enthusiast", "professional idiot"];
+const roles = ["Jr developer", "linux user", "tech enthusiast", "professional idiot"];
 let roleIndex = 0;
 let charIndex = 0;
 let deleting = false;
