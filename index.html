@@ -8,60 +8,14 @@
   <link rel="icon" href="favicon.ico">
 </head>
 <body>
-  <header class="navbar">
-    <a class="logo">
-      <span>Sqidgeon</span><span class="accent">.Dev</span>
-    </a>
-
-    <button id="menu-btn" aria-label="Open menu">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-           stroke="currentColor" stroke-width="2">
-        <line x1="4" y1="6" x2="20" y2="6" />
-        <line x1="4" y1="12" x2="20" y2="12" />
-        <line x1="4" y1="18" x2="20" y2="18" />
-      </svg>
-    </button>
-
-    <nav id="menu" class="menu">
-      <button id="close-btn" aria-label="Close menu">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-             stroke="currentColor" stroke-width="2">
-          <line x1="18" y1="6" x2="6" y2="18" />
-          <line x1="6" y1="6" x2="18" y2="18" />
-        </svg>
-      </button>
-
-      <a href="#hero">Home</a>
-      <a href="#about">About</a>
-      <a href="#socials">Socials</a>
-      <a href="#contact">Contact</a>
-      <a href="/docs">Docs</a>
-
-      <div class="theme-toggle-container">
-        <span>Theme:</span>
-        <button id="theme-toggle" aria-label="Toggle theme">
-          <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
-          </svg>
-          <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="4" />
-            <path d="M12 2v2m0 16v2m10-10h-2M4 12H2m15.364 6.364-1.414-1.414M6.05 6.05 4.636 4.636m12.728 0-1.414 1.414M6.05 17.95l-1.414 1.414" />
-          </svg>
-        </button>
-      </div>
-    </nav>
-  </header>
-
-  <div id="overlay"></div>
 
   <main>
+    <!-- Hero Section -->
     <section id="hero" class="hero">
       <div class="hero-content">
         <div class="hero-text">
           <h1>Hi, I'm <span class="accent">Sqidgeon</span></h1>
-          <h2>I am a <span class="typing"></span></h2>
+          <h2>I am a<span class="typing"></span></h2>
         </div>
         <div class="hero-image-container">
           <img src="profile.png" alt="Sqidgeon" class="hero-image" />
@@ -81,19 +35,74 @@
     <section id="socials" class="section">
       <h2>Socials</h2>
       <div class="social-grid">
-        <div class="social-card"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg"><h3>GitHub</h3><p>@sqidgeon</p><a href="https://github.com/sqidgeon" target="_blank" class="btn">Visit</a></div>
-        <div class="social-card"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/modrinth.svg"><h3>Modrinth</h3><p>@sqidgeon</p><a href="https://modrinth.com/user/Sqidgeon" target="_blank" class="btn">Visit</a></div>
-        <div class="social-card"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/curseforge.svg"><h3>CurseForge</h3><p>@sqidgeon</p><a href="https://www.curseforge.com/members/sqidgeon/projects" target="_blank" class="btn">Visit</a></div>
-        <div class="social-card"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/steam.svg"><h3>Steam</h3><p>@sqidgeon</p><a href="https://steamcommunity.com/sqidgeon" target="_blank" class="btn">Visit</a></div>
-        <div class="social-card"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg"><h3>My Lab</h3><p>@ApplicationLabs</p><a href="https://www.youtube.com/@ApplicationLabs" target="_blank" class="btn">Visit</a></div>
-        <div class="social-card"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/reddit.svg"><h3>Reddit</h3><p>u/sqidgeon</p><a href="https://www.reddit.com/user/Sqidgeon/" target="_blank" class="btn">Visit</a></div>
+        <div class="social-card"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub"><h3>GitHub</h3><p>@sqidgeon</p><a href="https://github.com/sqidgeon" target="_blank" class="btn">Visit</a></div>
+        <div class="social-card"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/modrinth.svg" alt="Modrinth"><h3>Modrinth</h3><p>@sqidgeon</p><a href="https://modrinth.com/user/Sqidgeon" target="_blank" class="btn">Visit</a></div>
+        <div class="social-card"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/curseforge.svg" alt="CurseForge"><h3>CurseForge</h3><p>@sqidgeon</p><a href="https://www.curseforge.com/members/sqidgeon/projects" target="_blank" class="btn">Visit</a></div>
+        <div class="social-card"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/steam.svg" alt="Steam"><h3>Steam</h3><p>@sqidgeon</p><a href="https://steamcommunity.com/id/sqidgeon" target="_blank" class="btn">Visit</a></div>
+        <div class="social-card"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube"><h3>My Lab</h3><p>@ApplicationLabs</p><a href="https://www.youtube.com/@ApplicationLabs" target="_blank" class="btn">Visit</a></div>
+        <div class="social-card"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/reddit.svg" alt="Reddit"><h3>Reddit</h3><p>u/sqidgeon</p><a href="https://www.reddit.com/user/Sqidgeon/" target="_blank" class="btn">Visit</a></div>
       </div>
-
     </section>
+  </main>
 
   <footer>
     <p>© 2025 Sqidgeon</p>
   </footer>
+
+  <!-- Bottom Navigation Bar (replaces old top navbar) -->
+  <nav class="bottom-nav" aria-label="Main navigation">
+    <a href="#hero" aria-label="Home" data-tooltip="Home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      </svg>
+    </a>
+
+    <a href="#about" aria-label="About" data-tooltip="About">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <circle cx="12" cy="12" r="4"></circle>
+        <line x1="21.17" y1="8" x2="12" y2="8"></line>
+        <line x1="3.95" y1="6.06" x2="8.54" y2="14"></line>
+        <line x1="10.88" y1="21.94" x2="15.46" y2="14"></line>
+      </svg>
+    </a>
+
+    <a href="#socials" aria-label="Socials" data-tooltip="Socials">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+        <circle cx="9" cy="7" r="4"></circle>
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+      </svg>
+    </a>
+
+    <a href="/docs" aria-label="Docs" data-tooltip="Docs">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+        <polyline points="14 2 14 8 20 8"></polyline>
+        <line x1="12" y1="18" x2="12" y2="12"></line>
+        <line x1="9" y1="15" x2="15" y2="15"></line>
+      </svg>
+    </a>
+
+    <button id="theme-toggle" aria-label="Toggle dark mode" data-tooltip="Toggle Theme">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    </button>
+  </nav>
 
   <script src="script.js"></script>
 </body>

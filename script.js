@@ -1,44 +1,17 @@
-// ===============================
-// Burger Menu
-// ===============================
-const menuBtn = document.getElementById("menu-btn");
-const closeBtn = document.getElementById("close-btn");
-const menu = document.getElementById("menu");
-const overlay = document.getElementById("overlay");
-
-menuBtn.addEventListener("click", () => {
-  menu.classList.add("open");
-  overlay.classList.add("active");
-});
-
-closeBtn.addEventListener("click", () => {
-  menu.classList.remove("open");
-  overlay.classList.remove("active");
-});
-
-overlay.addEventListener("click", () => {
-  menu.classList.remove("open");
-  overlay.classList.remove("active");
-});
-
-// ===============================
 // Theme Toggle
-// ===============================
 const themeToggle = document.getElementById("theme-toggle");
 const root = document.documentElement;
-const savedTheme = localStorage.getItem("theme");
-if (savedTheme) root.setAttribute("data-theme", savedTheme);
+const savedTheme = localStorage.getItem("theme") || "light";
+root.setAttribute("data-theme", savedTheme);
 
 themeToggle.addEventListener("click", () => {
-  const currentTheme = root.getAttribute("data-theme");
-  const newTheme = currentTheme === "dark" ? "light" : "dark";
+  const current = root.getAttribute("data-theme");
+  const newTheme = current === "dark" ? "light" : "dark";
   root.setAttribute("data-theme", newTheme);
   localStorage.setItem("theme", newTheme);
 });
 
-// ===============================
 // Typing Effect
-// ===============================
 const typingElement = document.querySelector(".typing");
 const roles = ["Jr developer", "linux user", "tech enthusiast", "professional idiot"];
 let roleIndex = 0;
@@ -51,7 +24,7 @@ function type() {
     typingElement.textContent = current.substring(0, charIndex++);
     if (charIndex > current.length) {
       deleting = true;
-      setTimeout(type, 2250); // how long each word stays
+      setTimeout(type, 2250);
       return;
     }
   } else {
@@ -64,26 +37,22 @@ function type() {
   setTimeout(type, deleting ? 60 : 120);
 }
 
-type();
+if (typingElement) type();
 
-// ===============================
-// Show More Socials
-// ===============================
-const showMoreBtn = document.getElementById("show-more-btn");
-const socialGrid = document.querySelector(".social-grid");
+// Bottom Nav Active State
+const navLinks = document.querySelectorAll(".bottom-nav a[href^='#']");
+const sections = document.querySelectorAll("section[id]");
 
-if (showMoreBtn && socialGrid) {
-  showMoreBtn.addEventListener("click", () => {
-    socialGrid.classList.toggle("expanded");
-
-    if (socialGrid.classList.contains("expanded")) {
-      showMoreBtn.textContent = "Show Less";
-    } else {
-      showMoreBtn.textContent = "Show More";
-      window.scrollTo({
-        top: socialGrid.offsetTop - 100,
-        behavior: "smooth",
-      });
-    }
+function updateActive() {
+  let current = "";
+  sections.forEach(section => {
+    const rect = section.getBoundingClientRect();
+    if (rect.top <= 120 && rect.bottom >= 120) current = section.id;
+  });
+  navLinks.forEach(link => {
+    link.classList.toggle("active", link.getAttribute("href") === `#${current}`);
   });
 }
+
+window.addEventListener("scroll", updateActive);
+window.addEventListener("load", updateActive);
