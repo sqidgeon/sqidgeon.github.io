@@ -1,17 +1,26 @@
-// Theme Toggle
 const themeToggle = document.getElementById("theme-toggle");
 const root = document.documentElement;
 const savedTheme = localStorage.getItem("theme") || "light";
 root.setAttribute("data-theme", savedTheme);
+
+const presenceImg = document.getElementById("discord-presence");
+
+function updatePresenceTheme(theme) {
+  if (!presenceImg) return;
+  presenceImg.src =
+    `https://lanyard.cnrad.dev/api/1398228888139600006?theme=${theme}&animated=true&hideDiscrim=true&borderRadius=8px`;
+}
+
+updatePresenceTheme(savedTheme);
 
 themeToggle.addEventListener("click", () => {
   const current = root.getAttribute("data-theme");
   const newTheme = current === "dark" ? "light" : "dark";
   root.setAttribute("data-theme", newTheme);
   localStorage.setItem("theme", newTheme);
+  updatePresenceTheme(newTheme);
 });
 
-// Typing Effect
 const typingElement = document.querySelector(".typing");
 const roles = ["Jr developer", "linux user", "tech enthusiast", "professional idiot"];
 let roleIndex = 0;
@@ -39,7 +48,6 @@ function type() {
 
 if (typingElement) type();
 
-// Bottom Nav Active State
 const navLinks = document.querySelectorAll(".bottom-nav a[href^='#']");
 const sections = document.querySelectorAll("section[id]");
 
